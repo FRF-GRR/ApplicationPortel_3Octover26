@@ -1,0 +1,38 @@
+﻿@model ApplicationPortel_3Octover26.Models.tblEmployee
+@{
+    ViewBag.Title = "NewUser";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>NewUser</h2>
+@using (Html.BeginForm("NewUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))//use for enctype file upload
+{ 
+    <table>
+        @Html.HiddenFor(m => m.EmployeeId)
+        @Html.HiddenFor(m => m.EmployeeResume)
+        <tr>
+            <td>@Html.LabelFor(m => m.EmployeeName)</td>
+            <td>@Html.TextBoxFor(m => m.EmployeeName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmployeeEmail)</td>
+            <td>@Html.TextBoxFor(m => m.EmployeeEmail)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmployeePassword)</td>
+            <td>@Html.TextBoxFor(m => m.EmployeePassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmployeeResume)</td>
+            <td><input type="file" name="File" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="@ViewBag.btn"/>
+            </td>
+        </tr>
+    </table>
+
+
+}
+

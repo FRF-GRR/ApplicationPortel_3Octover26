@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ApplicationPortel_3Octover26.Models.tblEmployee>
+@{
+    ViewBag.Title = "EmployeeList";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>EmployeeList</h2>
+<table>
+    <tr>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Password</th>
+        <th>Employee Resume</th>
+    </tr>
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>@employee.EmployeeName</td>
+            <td>@employee.EmployeeEmail</td>
+            <td>@employee.EmployeePassword</td>
+            <td><img src="@Url.Content(employee.EmployeeResume)" width="100" height="100" /></td>
+            <td>@Html.ActionLink("Edit", "NewUser", new { id = employee.EmployeeId }) </td>
+            <td>@Html.ActionLink("Delete", "DeleteUser", new { id = employee.EmployeeId })</td>
+            <!---
+        Url.Content is used to show img from the path stored in the database.
+        -->
+        </tr>
+    }
+</table>
+

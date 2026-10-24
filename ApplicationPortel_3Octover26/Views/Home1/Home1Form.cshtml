@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ApplicationPortel_3Octover26.Models.BindtblRegis1>
+@{
+    ViewBag.Title = "Home1Form";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<h2>Home1Form</h2>
+
+<h3>Welcome to the Home1 Page</h3>
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RDob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RDepartment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RHobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RResume)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RDob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RDepartment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RHobbies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RCity)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.RResume))
+                {
+                   <img src="@Url.Content(item.RResume)" width="50" height="50" />
+                }
+                else
+                {
+                    <span>No Resume</span>
+                }
+                
+            </td>
+           
+        </tr>
+    }
+
+</table>
+
+

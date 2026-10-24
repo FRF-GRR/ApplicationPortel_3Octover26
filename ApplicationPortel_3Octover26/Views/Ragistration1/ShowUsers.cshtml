@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ApplicationPortel_3Octover26.Models.BindtblRegis1>
+
+@{
+    ViewBag.Title = "ShowUsers";
+}
+
+<h2>ShowUsers</h2>
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RDob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RDepartment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RHobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RResume)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RMobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RDob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RDepartment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RHobbies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RCity)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.RResume))// it is use to when user image is nullshow no resume 
+            {
+                <img src="@Url.Content(item.RResume)" width="50" height="50" />
+            }
+            else
+            {
+                <span>No Resume</span>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddUser", new { id=item.RId }) |
+            @Html.ActionLink("Delete", "DeleteUsers", new { id=item.RId })
+        </td>
+    </tr>
+}
+
+</table>
